@@ -1,0 +1,669 @@
+/* Leaflet CSS for maps */
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Vibrant CivicTrack Theme
+   * High contrast, vibrant colors for maximum visibility
+  */
+  :root {
+    /* Vibrant Blue Primary */
+    --background: 0 0% 100%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    /* Vibrant Blue - High Contrast */
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 15% 40%;
+
+    /* Vibrant Success Green */
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Vibrant Warning Orange */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 210 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Vibrant Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 25% 10%;
+    --sidebar-primary: 220 25% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 220 25% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 210 100% 50%;
+
+    /* Vibrant Status Colors */
+    --status-reported: 0 84% 60%;
+    --status-in-progress: 38 92% 50%;
+    --status-resolved: 142 76% 36%;
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 210 100% 60%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 220 25% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 25% 15%;
+    --muted-foreground: 220 15% 70%;
+
+    --accent: 142 76% 46%;
+    --accent-foreground: 220 25% 10%;
+
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 25% 15%;
+    --input: 220 25% 15%;
+    --ring: 210 100% 60%;
+
+    --sidebar-background: 220 25% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 25% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 25% 20%;
+    --sidebar-ring: 210 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Professional typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Vibrant text gradients */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Vibrant shadows */
+  .shadow-professional {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-professional-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@layer components {
+  /* Enhanced Professional Animations */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .fade-in-down {
+    animation: fadeInDown 0.6s ease-out;
+  }
+
+  .scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.4s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Button Styles with Enhanced Visibility */
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-professional-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-100 text-gray-800 hover:text-gray-900 border-2 border-gray-300 hover:border-gray-400 font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-professional-lg active:scale-95;
+  }
+
+  .btn-success {
+    @apply bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-professional-lg active:scale-95;
+  }
+
+  .btn-warning {
+    @apply bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-professional-lg active:scale-95;
+  }
+
+  .btn-danger {
+    @apply bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-professional-lg active:scale-95;
+  }
+
+  /* Card Styles with Enhanced Visibility */
+  .card-professional {
+    @apply bg-white border border-gray-200 rounded-2xl shadow-professional hover:shadow-professional-lg transition-all duration-300 hover:border-blue-300;
+  }
+
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 rounded-2xl shadow-professional;
+  }
+
+  /* Navigation Styles with Enhanced Visibility */
+  .nav-link {
+    @apply text-gray-700 hover:text-blue-600 font-medium transition-all duration-200 relative;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-green-600 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .nav-link.active {
+    @apply text-blue-600 bg-blue-50 rounded-xl px-4 py-2;
+  }
+
+  /* Input Styles with Enhanced Visibility */
+  .input-professional {
+    @apply bg-white border-2 border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-gray-900 placeholder-gray-500 rounded-xl transition-all duration-200;
+  }
+
+  /* Status Badge Styles with Enhanced Visibility */
+  .status-reported {
+    @apply bg-red-100 text-red-800 border border-red-200 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-in-progress {
+    @apply bg-orange-100 text-orange-800 border border-orange-200 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-resolved {
+    @apply bg-green-100 text-green-800 border border-green-200 px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  /* Hero Section Styles */
+  .hero-gradient {
+    @apply bg-gradient-to-br from-blue-600 via-blue-700 to-green-600;
+  }
+
+  .hero-pattern {
+    background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  }
+
+  /* CTA Button Styles */
+  .cta-button {
+    @apply bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-bold px-8 py-4 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-professional-lg active:scale-95;
+  }
+
+  /* Issue Card Styles with Enhanced Visibility */
+  .issue-card {
+    @apply card-professional cursor-pointer;
+  }
+
+  .issue-card:hover {
+    @apply border-blue-400 bg-blue-50/50 transform scale-[1.02];
+  }
+
+  /* Interactive Hover Styles with Enhanced Visibility */
+  .interactive-hover {
+    @apply transition-all duration-200 ease-in-out cursor-pointer;
+  }
+
+  .interactive-hover:hover {
+    @apply bg-gray-100 text-gray-900 transform scale-105;
+  }
+
+  .interactive-hover:active {
+    @apply transform scale-95;
+  }
+
+  /* Loading Shimmer Effect */
+  .loading-shimmer {
+    @apply relative overflow-hidden bg-gray-200 rounded;
+  }
+
+  .loading-shimmer::before {
+    @apply content-[''] absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer;
+  }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Floating Animation */
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Glass Morphism Effect */
+  .glass-morphism {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl;
+  }
+
+  /* Progress Ring Styles */
+  .progress-ring {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .progress-ring:hover {
+    @apply transform scale-110;
+  }
+
+  /* Tooltip Professional Styles */
+  .tooltip-professional {
+    @apply bg-gray-900 text-white px-3 py-2 rounded-lg text-sm shadow-lg;
+  }
+
+  /* Vibrant Dividers */
+  .divider-gradient {
+    @apply h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent;
+  }
+
+  /* Vibrant Focus States */
+  .focus-professional {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-600/50 focus:ring-offset-2;
+  }
+
+  /* Vibrant Transitions */
+  .transition-professional {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Vibrant Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out transform hover:-translate-y-2 hover:shadow-professional-lg;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 ease-out hover:shadow-[0_0_20px_rgba(37,99,235,0.4)];
+  }
+
+  /* Vibrant Text Effects */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(37, 99, 235, 0.6);
+  }
+
+  /* Dark Mode Specific Styles with Enhanced Visibility */
+  .dark .card-professional {
+    @apply bg-gray-800 border-gray-700 hover:border-blue-400 text-white;
+  }
+
+  .dark .card-glass {
+    @apply bg-gray-800/90 border-gray-600 text-white;
+  }
+
+  .dark .glass-morphism {
+    @apply bg-gray-800/20 border-gray-600 text-white;
+  }
+
+  .dark .input-professional {
+    @apply bg-gray-800 border-gray-600 focus:border-blue-400 focus:ring-blue-400/20 text-white placeholder-gray-400;
+  }
+
+  .dark .nav-link {
+    @apply text-gray-300 hover:text-white transition-colors duration-200;
+  }
+
+  .dark .nav-link:hover {
+    @apply text-white bg-gray-700;
+  }
+
+  .dark .nav-link.active {
+    @apply text-white bg-blue-600;
+  }
+
+  .dark .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white border-gray-600 hover:border-gray-500;
+  }
+
+  .dark .btn-success {
+    @apply bg-green-600 hover:bg-green-700 text-white;
+  }
+
+  .dark .btn-warning {
+    @apply bg-orange-600 hover:bg-orange-700 text-white;
+  }
+
+  .dark .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white;
+  }
+
+  .dark .interactive-hover {
+    @apply transition-all duration-200 ease-in-out text-gray-300;
+  }
+
+  .dark .interactive-hover:hover {
+    @apply bg-gray-700 text-white transform scale-105;
+  }
+
+  .dark .status-reported {
+    @apply bg-red-900/60 text-red-200 border-red-600;
+  }
+
+  .dark .status-in-progress {
+    @apply bg-orange-900/60 text-orange-200 border-orange-600;
+  }
+
+  .dark .status-resolved {
+    @apply bg-green-900/60 text-green-200 border-green-600;
+  }
+
+  .dark .issue-card {
+    @apply transition-all duration-200 ease-in-out text-white;
+  }
+
+  .dark .issue-card:hover {
+    @apply bg-gray-800 border-blue-400 shadow-lg;
+  }
+
+  .dark .issue-card:hover h3 {
+    @apply text-white;
+  }
+
+  .dark .issue-card:hover p {
+    @apply text-gray-300;
+  }
+
+  .dark .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent;
+  }
+
+  .dark .hover-lift:hover {
+    @apply bg-gray-800 border-gray-600;
+  }
+
+  .dark .hero-gradient {
+    @apply bg-gradient-to-br from-blue-700 via-blue-800 to-green-700;
+  }
+
+  .dark .cta-button {
+    @apply bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white;
+  }
+
+  /* Enhanced Dark Mode Hover Text Visibility */
+  .dark .btn-primary:hover {
+    @apply text-white;
+  }
+
+  .dark .btn-secondary:hover {
+    @apply text-white;
+  }
+
+  .dark .btn-success:hover {
+    @apply text-white;
+  }
+
+  .dark .btn-warning:hover {
+    @apply text-white;
+  }
+
+  .dark .btn-danger:hover {
+    @apply text-white;
+  }
+
+  .dark .nav-link:hover {
+    @apply text-white;
+  }
+
+  .dark .interactive-hover:hover {
+    @apply text-white;
+  }
+
+  .dark .issue-card:hover .text-muted-foreground {
+    @apply text-gray-300;
+  }
+
+  .dark .issue-card:hover .text-foreground {
+    @apply text-white;
+  }
+
+  .dark .card-professional:hover .text-muted-foreground {
+    @apply text-gray-300;
+  }
+
+  .dark .card-professional:hover .text-foreground {
+    @apply text-white;
+  }
+
+  /* Card hover effects */
+  .dark .card-professional:hover {
+    @apply bg-gray-800 border-blue-400 shadow-lg;
+  }
+
+  .dark .card-glass:hover {
+    @apply bg-gray-800/95 border-gray-500;
+  }
+
+  /* Form elements */
+  .dark .input-professional:hover {
+    @apply border-gray-500;
+  }
+
+  .dark .input-professional:focus {
+    @apply border-blue-400 ring-blue-400/20;
+  }
+
+  /* Light Mode Enhanced Visibility */
+  .btn-primary {
+    @apply text-white;
+  }
+
+  .btn-primary:hover {
+    @apply text-white;
+  }
+
+  .btn-secondary {
+    @apply text-gray-800;
+  }
+
+  .btn-secondary:hover {
+    @apply text-gray-900;
+  }
+
+  .nav-link {
+    @apply text-gray-700;
+  }
+
+  .nav-link:hover {
+    @apply text-blue-600;
+  }
+
+  .nav-link.active {
+    @apply text-blue-600;
+  }
+
+  .interactive-hover {
+    @apply text-gray-700;
+  }
+
+  .interactive-hover:hover {
+    @apply text-gray-900;
+  }
+
+  .issue-card {
+    @apply text-gray-900;
+  }
+
+  .issue-card:hover {
+    @apply text-gray-900;
+  }
+
+  .issue-card:hover h3 {
+    @apply text-gray-900;
+  }
+
+  .issue-card:hover p {
+    @apply text-gray-700;
+  }
+
+  .card-professional {
+    @apply text-gray-900;
+  }
+
+  .card-professional:hover {
+    @apply text-gray-900;
+  }
+
+  .card-professional:hover .text-muted-foreground {
+    @apply text-gray-600;
+  }
+
+  .card-professional:hover .text-foreground {
+    @apply text-gray-900;
+  }
+
+  /* Enhanced contrast for better visibility */
+  .text-foreground {
+    @apply text-gray-900;
+  }
+
+  .dark .text-foreground {
+    @apply text-white;
+  }
+
+  .text-muted-foreground {
+    @apply text-gray-600;
+  }
+
+  .dark .text-muted-foreground {
+    @apply text-gray-300;
+  }
+
+  /* Status badges with enhanced visibility */
+  .status-reported {
+    @apply bg-red-100 text-red-800 border-red-200;
+  }
+
+  .dark .status-reported {
+    @apply bg-red-900/60 text-red-200 border-red-600;
+  }
+
+  .status-in-progress {
+    @apply bg-orange-100 text-orange-800 border-orange-200;
+  }
+
+  .dark .status-in-progress {
+    @apply bg-orange-900/60 text-orange-200 border-orange-600;
+  }
+
+  .status-resolved {
+    @apply bg-green-100 text-green-800 border-green-200;
+  }
+
+  .dark .status-resolved {
+    @apply bg-green-900/60 text-green-200 border-green-600;
+  }
+}
