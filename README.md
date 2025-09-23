@@ -6,7 +6,26 @@ A modern, full-stack civic engagement platform that empowers citizens to report 
 ![React](https://img.shields.io/badge/React-18.3.1-blue)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
 ![Supabase](https://img.shields.io/badge/Supabase-2.53.0-green)
+### Output images
 
+#### Account Creation
+![Account Creation](./docs/IMG-20250923-WA0016.jpg)
+
+#### Admin Dashboard Overview
+![Admin Dashboard](./docs/IMG-20250923-WA0014.jpg)
+
+#### Issue Management View
+![Issue Management](./docs/IMG-20250923-WA0013.jpg)
+
+#### Report Issue Form
+![Report Issue Form](./docs/IMG-20250923-WA0012.jpg)
+
+#### Geographic Issue Distribution Map
+![Issue Map](./docs/IMG-20250923-WA0010.jpg)
+
+---
+
+*These images showcase key parts of the CivicTrack platform, including account setup, issue reporting, admin panels, and map visualization.*
 ## ✨ Features
 
 ### 🎯 **For Citizens**
@@ -258,3 +277,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Made with ❤️ for better communities everywhere**
+
